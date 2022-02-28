@@ -1,0 +1,71 @@
+{
+  "items": [
+    {
+      "category": "Forest",
+      "id": 1,
+      "image": "assets/Forest1/elephant.png",
+      "name": "Elephant",
+      "audio": "assets/Forest1Sound/Elefant.mp3"
+    },
+    {
+      "category": "Forest",
+      "id": 2,
+      "image": "assets/Forest1/cobra.png",
+      "name": "Cobra",
+      "audio": "assets/Forest1Sound/cobra.mp3"
+    },
+    {
+      "category": "Forest",
+      "id": 3,
+      "image": "assets/Forest1/rebit.png",
+      "name": "Rebit",
+      "audio": "assets/Forest1Sound/rebit.mp3"
+    },
+    {
+      "category": "Forest",
+      "id": 4,
+      "image": "assets/Forest1/bison.png",
+      "name": "Bison",
+      "audio": "assets/Forest1Sound/bison.mp3"
+    },
+    {
+      "category": "Forest",
+      "id": 5,
+      "image": "assets/Forest1/elk.png",
+      "name": "Elk",
+      "audio": "assets/Forest1Sound/elk.mp3"
+    },
+    {
+      "category": "Forest",
+      "id": 6,
+      "image": "assets/Forest1/monkey.png",
+      "name": "Monkey",
+      "audio": "assets/Forest1Sound/monkey.mp3"
+    },{
+      "category": "Forest",
+      "id": 7,
+      "image": "assets/Forest1/coyotes.png",
+      "name": "coyotes",
+      "audio": "assets/Forest1Sound/coyotes.mp3"
+    },
+    {
+      "category": "Forest",
+      "id": 8,
+      "image": "assets/Forest1/aligator.png",
+      "name": "Aligator",
+      "audio": "assets/Forest1Sound/alligator.mp3"
+    },{
+      "category": "Forest",
+      "id": 9,
+      "image": "assets/Forest1/frog.png",
+      "name": "Frog",
+      "audio": "assets/Forest1Sound/frogs.mp3"
+    },{
+      "category": "Forest",
+      "id": 10,
+      "image": "assets/Forest1/geier.png",
+      "name": "Geier",
+      "audio": "assets/Forest1Sound/geier.mp3"
+    }
+  ]
+}

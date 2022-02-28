@@ -1,9 +1,16 @@
 import 'package:animal_sound/Views/HomePageView.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
+import 'Views/SplashScreen.dart';
+
 void main() {
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.landscapeRight,
+    DeviceOrientation.landscapeLeft,
+  ]);
   runApp(MyApp());
 }
 
@@ -19,7 +26,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: HomePageView(),
+          home: SplashScreen(),
         );
       },
     );
