@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "294048919674",
+    "project_id": "animals-sound-ee68b",
+    "storage_bucket": "animals-sound-ee68b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294048919674:android:77a91dcbde300bc3c0cbc3",
+        "android_client_info": {
+          "package_name": "com.whitelight.animalsSound"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "294048919674-tbkjkn7d3clqbhqv280erg393v74fh84.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb1jihW16uj9YRyUdqS64CwcRKM7bcQvI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "294048919674-tbkjkn7d3clqbhqv280erg393v74fh84.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,36 +1,35 @@
+
 import 'dart:typed_data';
-import 'package:animal_sound/Controllers/FirstcategoryController.dart';
+
+import 'package:animal_sound/Controllers/FifthCategory.dart';
 import 'package:animal_sound/Controllers/NetworkManager.dart';
-import 'package:animal_sound/Model/AudioModelAsset.dart';
-import 'package:animal_sound/Model/imageModelAsset.dart';
 import 'package:animal_sound/Widget/BouncyWidget.dart';
 import 'package:animal_sound/Widget/NoConnectionWidget.dart';
 import 'package:animal_sound/Widget/Oreantation.dart';
 import 'package:animal_sound/Widget/ScreenUtils.dart';
 import 'package:animal_sound/Widget/SplashhTap.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import 'HomePageView.dart';
 
-class ForestView1 extends StatefulWidget {
-  const ForestView1({Key? key}) : super(key: key);
+class DesertView extends StatefulWidget {
+  const DesertView({Key? key}) : super(key: key);
 
   @override
-  _ForestView1State createState() => _ForestView1State();
+  _DesertViewState createState() => _DesertViewState();
 }
 
-class _ForestView1State extends State<ForestView1> {
-  FirstCategoryController firstCategoryController = Get.find();
+class _DesertViewState extends State<DesertView> {
   AudioPlayer audioPlayer = AudioPlayer();
-
+FifthCategoryController fifthCategoryController=Get.find();
   @override
   void initState() {
     super.initState();
-    firstCategoryController.getJungleOneList();
+   fifthCategoryController.getDesertDataApi();
     //  backgroungplayer.setVolume(0.07);
     OrientationScr.getLandScapMode();
     // TODO: implement initState
@@ -90,7 +89,6 @@ class _ForestView1State extends State<ForestView1> {
         return false;
     }
   }
-
   Future<bool> willpopScop ()async{
     Get.off(()=>HomePageView());
     return true;
@@ -105,15 +103,16 @@ class _ForestView1State extends State<ForestView1> {
           return AdvanceCustomAlert();
         },);
       }else{
+
         ScreenUtilsModel().setCurrentUtils(context);
         return Obx(() {
-          if (firstCategoryController.isLoading.isTrue) {
+          if (fifthCategoryController.isLoading.isTrue) {
             return Stack(
               children: [
                 Container(
                   height: ScreenUtil().screenHeight,
                   width: ScreenUtil().screenWidth,
-                  child: Opacity(opacity: 0.3,child: Image.asset('assets/forest.png')),
+                  child: Opacity(opacity: 0.3,child: Image.asset('assets/desertart.jpeg')),
                 ),
                 Center(
                   child: CircularProgressIndicator()
@@ -132,7 +131,7 @@ class _ForestView1State extends State<ForestView1> {
                         //  height: size.height.h,
                         width: ScreenUtil().screenWidth,
                         child: Image.asset(
-                          "assets/forest.png",
+                          "assets/desertart.jpeg",
                           // firstCategoryController.getJungleOneData.value.data.where((element) => false),
                           fit: BoxFit.fill,
                         ),
@@ -151,100 +150,100 @@ class _ForestView1State extends State<ForestView1> {
                                   width: 100.w,
                                   child: Image.asset('assets/homebutton.png')))),
 
-                      ///Elephant
+                      ///cat
                       Positioned(
-                          top: 150.h,
+                          bottom: 100.h,
                           left: 0.w,
                           child: Splash(
                             onTap: () {
-                              print("elephant");
+                              print("cat");
                               checkPlayingstate()
-                                  ? setaudioPlayer(firstCategoryController
-                                  .getJungleOneData.value!.elephant.audioL
-                                  )
+                                  ? setaudioPlayer(fifthCategoryController
+                                  .getDesertData.value!.cat!.audioL!
+                              )
                                   : print("Something went wrong!");
                               setState(() {});
                             },
                             child: Container(
                               child: Image.network(
-                                firstCategoryController
-                                    .getJungleOneData.value!.elephant.image
+                                fifthCategoryController
+                                    .getDesertData.value!.cat!.image
                                     .toString(),
-                                height: 220.h,
-                                width: 90.w,
+                                height:120.h,
+                                width: 60.w,
                                 fit: BoxFit.fill,
                               ),
                             ),
                           )),
 
-                      ///Cobra
+                      ///Camel
                       Positioned(
-                          top: 350.h,
+                          top: 200.h,
+                          right: 10.w,
+                          child: Splash(
+                            onTap: () {
+                              print("camel");
+                              checkPlayingstate()
+                                  ? setaudioPlayer(fifthCategoryController
+                                  .getDesertData.value!.camel!.audioL!
+                              )
+                                  : print("Something went wrong!");
+                              setState(() {});
+                            },
+                            child: Container(
+                              child: Image.network(
+                                fifthCategoryController
+                                    .getDesertData.value!.camel!.image
+                                    .toString(),
+                                height: 150.h,
+                                width: 70.w,
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          )),
+
+                      ///rat
+                      Positioned(
+                          bottom: 130.h,
                           left: 70.w,
                           child: Splash(
                             onTap: () {
-                              print("cobra");
+                              print("rat");
                               checkPlayingstate()
-                                  ? setaudioPlayer(firstCategoryController
-                                  .getJungleOneData.value!.cobra.audioL
-                                  )
+                                  ? setaudioPlayer(fifthCategoryController
+                                  .getDesertData.value!.rat!.audioL!)
                                   : print("Something went wrong!");
                               setState(() {});
                             },
                             child: Container(
                               child: Image.network(
-                                firstCategoryController
-                                    .getJungleOneData.value!.cobra.image
+                                fifthCategoryController
+                                    .getDesertData.value!.rat!.image!
                                     .toString(),
-                                height: 140.h,
-                                width: 30.w,
+                                height: 70.h,
+                                width: 40.w,
                                 fit: BoxFit.fill,
                               ),
                             ),
                           )),
 
-                      ///rebit
+                      ///snake1
                       Positioned(
-                          bottom: 30.h,
-                          left: 135.w,
+                          bottom: 80.h,
+                          right: 125.w,
                           child: Splash(
                             onTap: () {
-                              print("rabit");
+                              print("snake2");
                               checkPlayingstate()
-                                  ? setaudioPlayer(firstCategoryController
-                                  .getJungleOneData.value!.rebit.audioL)
+                                  ? setaudioPlayer(fifthCategoryController
+                                  .getDesertData.value!.snake1!.audioL!)
                                   : print("Something went wrong!");
                               setState(() {});
                             },
                             child: Container(
                               child: Image.network(
-                                firstCategoryController
-                                    .getJungleOneData.value!.rebit.image
-                                    .toString(),
-                                height: 150.h,
-                                width: 30.w,
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                          )),
-
-                      ///bison
-                      Positioned(
-                          top: 250.h,
-                          right: 25.w,
-                          child: Splash(
-                            onTap: () {
-                              print("bison.png");
-                              checkPlayingstate()
-                                  ? setaudioPlayer(firstCategoryController
-                                  .getJungleOneData.value!.bison.audioL)
-                                  : print("Something went wrong!");
-                              setState(() {});
-                            },
-                            child: Container(
-                              child: Image.network(
-                                firstCategoryController
-                                    .getJungleOneData.value!.bison.image
+                                fifthCategoryController
+                                    .getDesertData.value!.snake1!.image
                                     .toString(),
                                 height: 150.h,
                                 width: 50.w,
@@ -253,49 +252,100 @@ class _ForestView1State extends State<ForestView1> {
                             ),
                           )),
 
-                      ///elk
+                      ///snake2
                       Positioned(
                           top: 250.h,
-                          right: 80.w,
+                          left: 120.w,
                           child: Splash(
                             onTap: () {
-                              print("elk");
+                              print("snake2");
                               checkPlayingstate()
-                                  ? setaudioPlayer(firstCategoryController
-                                  .getJungleOneData.value!.elk.audioL)
+                                  ? setaudioPlayer(fifthCategoryController
+                                  .getDesertData.value!.snake2!.audioL!)
                                   : print("Something went wrong!");
                               setState(() {});
                             },
                             child: Container(
                               child: Image.network(
-                                firstCategoryController.getJungleOneData.value!.elk.image
+                                fifthCategoryController
+                                    .getDesertData.value!.snake2!.image
                                     .toString(),
-                                height: 150.h,
+                                height: 120.h,
                                 width: 40.w,
                                 fit: BoxFit.fill,
                               ),
                             ),
                           )),
 
-                      ///coyotes
+                      ///tarantulas
                       Positioned(
                           top: 280.h,
-                          left: 130.w,
+                          left: 10.w,
                           child: Splash(
                             onTap: () {
-                              print("coyotes");
+                              print("tarantulas");
                               checkPlayingstate()
-                                  ? setaudioPlayer(firstCategoryController
-                                  .getJungleOneData.value!.coyotes.audioL
-                                  )
+                                  ? setaudioPlayer(fifthCategoryController
+                                  .getDesertData.value!.tarantulas!.audioL!
+                              )
                                   : print("Something went wrong!");
                               setState(() {});
                             },
                             child: Container(
                               child: Image.network(
-                                firstCategoryController
-                                    .getJungleOneData.value!.coyotes.image
+                                  fifthCategoryController
+                                      .getDesertData.value!.tarantulas!.image!
                                     .toString(),
+                                height: 120.h,
+                                width: 40.w,
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          )),
+
+                      ///thornydevil
+                      Positioned(
+                          top: 210.h,
+                          right: 113.w,
+                          child: Splash(
+                            onTap: () {
+                              print("thornydevil");
+                              checkPlayingstate()
+                                  ? setaudioPlayer(fifthCategoryController
+                                  .getDesertData.value!.thornydevil!.audioL!)
+                                  : print("Something went wrong!");
+                              setState(() {});
+                            },
+                            child: Container(
+                              child: Image.network(
+                                fifthCategoryController
+                                    .getDesertData.value!.thornydevil!.image
+                                    .toString(),
+                                height: 120.h,
+                                width: 60.w,
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          )),
+
+                      ///vulture
+                      Positioned(
+                          top: 28.h,
+                          right: 200.w,
+                          child: Splash(
+                            onTap: () {
+                              print("vulture");
+                              checkPlayingstate()
+                                  ? setaudioPlayer(fifthCategoryController
+                                  .getDesertData.value!.vulture!.audioL!
+                              )
+                                  : print("Something went wrong!");
+                              setState(() {});
+                            },
+                            child: Container(
+                              child: Image.network(
+                                fifthCategoryController
+                                    .getDesertData.value!.vulture!.image!,
                                 height: 150.h,
                                 width: 40.w,
                                 fit: BoxFit.fill,
@@ -303,107 +353,33 @@ class _ForestView1State extends State<ForestView1> {
                             ),
                           )),
 
-                      ///aligator
+                      ///yddax
                       Positioned(
-                          bottom: 10.h,
-                          right: 13.w,
+                          bottom:  17.h,
+                          right: 15.w,
                           child: Splash(
                             onTap: () {
-                              print("aligator");
+                              print("yddax");
                               checkPlayingstate()
-                                  ? setaudioPlayer(firstCategoryController
-                                  .getJungleOneData.value!.alligator.audioL)
+                                  ? setaudioPlayer(fifthCategoryController
+                                  .getDesertData.value!.yddax!.audioL!
+                              )
                                   : print("Something went wrong!");
                               setState(() {});
                             },
                             child: Container(
                               child: Image.network(
-                                firstCategoryController
-                                    .getJungleOneData.value!.alligator.image
+                                fifthCategoryController
+                                    .getDesertData.value!.yddax!.image
                                     .toString(),
-                                height: 180.h,
+                                height: 190.h,
                                 width: 100.w,
                                 fit: BoxFit.fill,
                               ),
                             ),
                           )),
 
-                      ///frog
-                      Positioned(
-                          bottom: 58.h,
-                          right: 130.w,
-                          child: Splash(
-                            onTap: () {
-                              print("frog");
-                              checkPlayingstate()
-                                  ? setaudioPlayer(firstCategoryController
-                                  .getJungleOneData.value!.frog.audioL
-                                  )
-                                  : print("Something went wrong!");
-                              setState(() {});
-                            },
-                            child: Container(
-                              child: Image.network(
-                                firstCategoryController.getJungleOneData.value!.frog.image
-                                    .toString(),
-                                height: 150.h,
-                                width: 40.w,
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                          )),
 
-                      ///geier
-                      Positioned(
-                          top: 157.h,
-                          right: 135.w,
-                          child: Splash(
-                            onTap: () {
-                              print("geierSound");
-                              checkPlayingstate()
-                                  ? setaudioPlayer(firstCategoryController
-                                  .getJungleOneData.value!.geier.audioL
-                                  )
-                                  : print("Something went wrong!");
-                              setState(() {});
-                            },
-                            child: Container(
-                              child: Image.network(
-                                firstCategoryController
-                                    .getJungleOneData.value!.geier.image
-                                    .toString(),
-                                height: 100.h,
-                                width: 25.w,
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                          )),
-
-                      ///monkey
-                      Positioned(
-                          top: 3.h,
-                          right: 3.w,
-                          child: Splash(
-                            onTap: () {
-                              print("monkey");
-                              checkPlayingstate()
-                                  ? setaudioPlayer(firstCategoryController
-                                  .getJungleOneData.value!.monkey.audioL
-                                  )
-                                  : print("Something went wrong!");
-                              setState(() {});
-                            },
-                            child: Container(
-                              child: Image.network(
-                                firstCategoryController
-                                    .getJungleOneData.value!.monkey.image
-                                    .toString(),
-                                height: 180.h,
-                                width: 40.w,
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                          )),
                     ],
                   ),
                 )),

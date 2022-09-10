@@ -1,6 +1,5 @@
-
-class ImagesCat{
-  static String alligatorImage="assets/Forest1/aligator.png";
+class ImagesCat {
+  /*static String alligatorImage="assets/Forest1/aligator.png";
   static String bisonImage="assets/Forest1/bison.png";
   static String cobraImage="assets/Forest1/cobra.png";
   static String coyotesImage="assets/Forest1/coyotes.png";
@@ -42,5 +41,53 @@ class ImagesCat{
   static String lambImage="assets/Farm1/lamb.png";
   static String parrotImage="assets/Farm1/parrot.png";
   static String pigeonsImage="assets/Farm1/pigeons.png";
-  static String ravenImage="assets/Farm1/raven.png";
+  static String ravenImage="assets/Farm1/raven.png";*/
+  static String alligatorImage = "";
+  static String bisonImage = "";
+  static String cobraImage = "";
+  static String coyotesImage = "";
+  static String elephantImage = "";
+  static String elkImage = "";
+  static String frogsImage = "";
+  static String geierImage = "";
+  static String gorillaImage = "";
+  static String grasshopperImage = "";
+
+  ///sound chhe mp3 nathi
+  //static String kapuzineraffeImage="assets/Forest1Sound/Kapuzineraffe.png";
+  static String leopardImage = "";
+
+  //static String loweImage="assets/Forest1Sound/Lowe.png";
+  //static String pumaImage="assets/Forest1Sound/Puma.png";
+  //static String rattlesnakeImage="assets/Forest1Sound/rattlesnake.png";
+  static String rhinozerusImage = "";
+  static String schimpanseImage = "";
+  static String tigerImage = "";
+  static String wolfImage = "";
+  static String lionImage = "";
+  static String crowImage = "";
+  static String owlImage = "";
+  static String monkeyImage = "";
+  static String rebitImage = "";
+
+  ///
+  static String bullImage = "";
+  static String catImage = "";
+  static String chickenImage = "";
+  static String dogImage = "";
+  static String donkeyImage = "";
+
+  //static String duckImage= "";
+  static String horseImage = "";
+  static String cowImage = "";
+  static String goatImage = "";
+  static String pigImage = "";
+  static String roosterImage = "";
+
+  // static String sheepImage="";
+  static String turkeyImage = "";
+  static String lambImage = "";
+  static String parrotImage = "";
+  static String pigeonsImage = "";
+  static String ravenImage = "";
 }

@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -69,10 +70,14 @@ class _SplashScreenState extends State<SplashScreen>
       ),
     );
   }
-
+  Future<InitializationStatus> _initGoogleMobileAds() {
+    // TODO: Initialize Google Mobile Ads SDK
+    return MobileAds.instance.initialize();
+  }
   @override
   void initState() {
     OrientationScr.getLandScapMode();
+    _initGoogleMobileAds();
     controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 4),
@@ -88,6 +93,7 @@ class _SplashScreenState extends State<SplashScreen>
   Timer(Duration(milliseconds: 4400),()=>Get.off(()=>HomePageView()));
     super.initState();
   }
+
 
   @override
   void dispose() {
